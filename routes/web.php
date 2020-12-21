@@ -41,6 +41,22 @@ Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index'
 //     return view('user');
 // });
 
+Route::get('/test',function(){
+    return view('/test');
+});
+
+Route::get('/home1',function(){
+    return view('/index');
+});
+
+Route::get('/about',function(){
+    return view('/about');
+});
+
+Route::get('/contact',function(){
+    return view('/contact');
+});
+
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
 Route::get('/posts', [ClientController::class, 'getAllPost'])->name('posts.getallPost');
