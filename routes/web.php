@@ -12,6 +12,10 @@ use App\Http\Controllers\FluentController;
 use App\Http\Controllers\Login1Controller;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PaginationController;
+use App\Http\Controllers\UploadController;
+use App\PaymentGateway\Payment;
+use App\Http\Controllers\MailController;
 
 
 /*
@@ -25,7 +29,8 @@ use App\Http\Controllers\PostController;
 |
 */
 
-/*Route::get('/', function () {
+/*Route::get('/{locale}', function ($locale) {
+    App::setlocale($locale);
     return view('welcome');
 });*/
 
@@ -55,6 +60,10 @@ Route::get('/about',function(){
 
 Route::get('/contact',function(){
     return view('/contact');
+});
+
+Route::get('/payment', function(){
+    return Payment::process();
 });
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
@@ -125,3 +134,18 @@ Route::get('/left-join',[PostController::class, 'leftJoinClause'])->name('post.l
 Route::get('/right-join',[PostController::class, 'rightJoin'])->name('post.rightjoin');
 
 Route::get('/all-posts', [PostController::class, 'getAllPostUsingModel'])->name('post.getallpostUsingmodel');
+
+/* Paginate Controlador */
+
+Route::get('/users', [PaginationController::class, 'allUsers'])->name('Users');
+
+/* upload Controlador */
+
+Route::get('/upload', [UploadController::class, 'uploadForm']);
+
+Route::post('upload', [UploadController::class, 'uploadFile'])->name('upload.uploadfile');
+
+
+/* Mail Controlador */
+
+Route::get('/send-email', [MailController::class, 'sendEmail']);
