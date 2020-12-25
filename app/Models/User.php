@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Service;
+use App\Models\Phone;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -18,6 +20,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    
 
     /**
      * The attributes that are mass assignable.
@@ -64,5 +67,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Service::class);
     }
+
+    public function phone()
+    {
+        return $this->hasOne(Phone::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users');
+    } 
 }
 

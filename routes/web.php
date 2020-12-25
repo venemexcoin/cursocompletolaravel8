@@ -16,8 +16,11 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\UploadController;
 use App\PaymentGateway\Payment;
 use App\Http\Controllers\MailController;
-
-
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Post1Controller;
+use App\Http\Controllers\Post2Controller;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -97,6 +100,10 @@ Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.i
 
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
+Route::get('/add-user', [UserController::class, 'insertRecord']);
+
+Route::get('/get-phone/{id}', [UserController::class, 'fetchPhoneByUser']);
+
 /* login Controlador */
 
 Route::get('/login1', [Login1Controller::class, 'index'])->name('login1.index')->middleware('CheckUser');
@@ -149,3 +156,38 @@ Route::post('upload', [UploadController::class, 'uploadFile'])->name('upload.upl
 /* Mail Controlador */
 
 Route::get('/send-email', [MailController::class, 'sendEmail']);
+
+
+/* Student Controlador */
+
+Route::get('/students', [StudentController::class, 'FetchStudents']);
+
+/*Post1 controlador */
+
+Route::get('/add-post1', [Post1Controller::class, 'addPost1']);
+
+Route::get('/add-comment/{id}', [Post1Controller::class, 'addComment']);
+
+Route::get('/get-comments/{id}', [Post1Controller::class, 'getCommentsByPost']);
+
+/*Post2 controlador */
+
+Route::get('/add-post2', [Post2Controller::class, 'addPost']);
+
+/* Role Controlador */
+
+Route::get('/add-roles', [RoleController::class, 'addRole']);
+
+Route::get('/add-users', [RoleController::class, 'addUser']);
+
+Route::get('/rolesbyuser/{id}', [RoleController::class, 'getAllRolesByUser']);
+
+Route::get('/usersbyrole/{id}', [RoleController::class, 'getAllUsersByRole']);
+
+/* employee controlador */
+
+Route::get('/add-employee',[EmployeeController::class, "addEmployee"]);
+
+Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
+
+Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);

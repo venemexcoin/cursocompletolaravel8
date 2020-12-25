@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post1 extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    protected $table = "post1s";
+    protected $table = "comments";
 
-    public function comments()
+    public function post1()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsTo(Post1::class);
     }
 }
