@@ -21,6 +21,13 @@ use App\Http\Controllers\Post1Controller;
 use App\Http\Controllers\Post2Controller;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmpController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\DropzoneController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\EditorController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -184,10 +191,41 @@ Route::get('/rolesbyuser/{id}', [RoleController::class, 'getAllRolesByUser']);
 
 Route::get('/usersbyrole/{id}', [RoleController::class, 'getAllUsersByRole']);
 
-/* employee controlador */
+/* employee controlador este es para archivos word*/ 
 
 Route::get('/add-employee',[EmployeeController::class, "addEmployee"]);
 
 Route::get('/export-excel', [EmployeeController::class, 'exportIntoExcel']);
 
 Route::get('/export-csv', [EmployeeController::class, 'exportIntoCSV']);
+
+Route::get('/import-form', [EmployeeController::class, 'importForm']);
+
+Route::post('/import', [EmployeeController::class, 'import'])->name('employee.import');
+
+
+/* Emp Controlador este es para PDF */
+
+Route::get('/get-all-employee', [EmpController::class, 'getAllEmployees']);
+
+Route::get('/download-pdf', [EmpController::class, 'downloadPDF']);
+
+/* Image Controlador */
+
+Route::get('/resize-image', [ImageController::class, 'resizeImage']);
+
+Route::post('/resize-image', [ImageController::class, 'resizeImageSubmit'])->name('image.resize');
+
+/* Dropzone Controlador */
+
+Route::get('/dropzone', [DropzoneController::class, 'dropzona']);
+
+Route::post('/dropzone-store', [DropzoneController::class, 'dropzoneStore'])->name('dropzone.store');
+
+/* Gallery Controlador */
+
+Route::get('/gallery', [GalleryController::class, 'gallery']);
+
+/* Editor controlador */
+
+Route::get('/editor', [EditorController::class, 'editor']);
