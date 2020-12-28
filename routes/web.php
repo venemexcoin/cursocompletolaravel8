@@ -26,6 +26,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
+use App\Http\Controllers\StudentIController;
 
 
 /*
@@ -229,3 +230,18 @@ Route::get('/gallery', [GalleryController::class, 'gallery']);
 /* Editor controlador */
 
 Route::get('/editor', [EditorController::class, 'editor']);
+
+
+/* StudentI controlador este es para un CRUD de imagenes */
+
+Route::get('/add-student', [StudentIController::class, 'addStudent']);
+
+Route::post( '/add-student', [StudentIController::class, 'storeStudent'])->name('student.store');
+
+Route::get('/all-student', [StudentIController::class, 'students']);
+
+Route::get('/edit-student/{id}', [StudentIController::class, 'editStudent']);
+
+Route::post('/update-student', [StudentIController::class, 'updateStudent'])->name('student.update');
+
+Route::get('/delete-student/{id}',[StudentIController::class, 'deleteStudent']);
