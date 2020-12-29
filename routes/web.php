@@ -27,6 +27,7 @@ use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\StudentIController;
+use App\Http\Controllers\HomeIndexController;
 
 
 /*
@@ -49,7 +50,14 @@ Route::get('/',[ProductController::class, 'Index'])->name('product.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
+
+    
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/home', [HomeIndexController::class, 'index']);
+
+Route::middleware(['auth:sanctum', 'verified'])->post('/home', [HomeIndexController::class, 'storehome'])->name('home.store');
+
 
 Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index');
 
