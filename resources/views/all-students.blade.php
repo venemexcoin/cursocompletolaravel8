@@ -20,6 +20,7 @@
                                 @endif
                             <div class="card-header">
                                 all Student
+                                <a href="{{ route('create_path')}}" class="btn btn-success" >Add New</a>
                             </div>
                             <div class="card-body">
                                 <table class="table table-Striped">

@@ -28,6 +28,9 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\StudentIController;
 use App\Http\Controllers\HomeIndexController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\Product45Controller;
 
 
 /*
@@ -242,14 +245,32 @@ Route::get('/editor', [EditorController::class, 'editor']);
 
 /* StudentI controlador este es para un CRUD de imagenes */
 
-Route::get('/add-student', [StudentIController::class, 'addStudent']);
+Route::get('/add-student', [StudentIController::class, 'addStudent'])->name('create_path');
 
 Route::post( '/add-student', [StudentIController::class, 'storeStudent'])->name('student.store');
 
-Route::get('/all-student', [StudentIController::class, 'students']);
+Route::get('/all-student', [StudentIController::class, 'students'])->name('all_path');
 
 Route::get('/edit-student/{id}', [StudentIController::class, 'editStudent']);
 
 Route::post('/update-student', [StudentIController::class, 'updateStudent'])->name('student.update');
 
 Route::get('/delete-student/{id}',[StudentIController::class, 'deleteStudent']);
+
+/* Contactos Controlador ejeplo de Mensajes */
+
+Route::get('/contact-us', [ContactController::class , 'contact']);
+
+Route::post('/send-message', [ContactController::class, 'sendEmail'])->name('contact.send');
+
+/* Controlador Test por lo que entendi para separa dos palabras en distintos array */
+
+Route::get('/get-name', [TestController::class, 'getFirstLastName']);
+
+/* Product45 Controlador para agregar productos */
+
+Route::get('/add-product',[Product45Controller::class, 'addProducts']); 
+
+Route::get('/search', [Product45Controller::class, 'search']);
+
+Route::get('/autocomplete', [Product45Controller::class, 'autocomplete'])->name('autocomplete');
