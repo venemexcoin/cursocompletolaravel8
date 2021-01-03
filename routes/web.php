@@ -31,6 +31,7 @@ use App\Http\Controllers\HomeIndexController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Product45Controller;
+use App\Http\Controllers\ZipController;
 
 
 /*
@@ -274,3 +275,10 @@ Route::get('/add-product',[Product45Controller::class, 'addProducts']);
 Route::get('/search', [Product45Controller::class, 'search']);
 
 Route::get('/autocomplete', [Product45Controller::class, 'autocomplete'])->name('autocomplete');
+
+/* Zip Controlador para descargar archivos */
+
+Route::get('/zip', [ZipController::class, 'zipFlile']);
+
+Route::get('/descargar', [ZipController::class, 'descarga']);
+
