@@ -32,6 +32,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Product45Controller;
 use App\Http\Controllers\ZipController;
+use App\Http\Controllers\Employee47Controller;
+use App\Http\Controllers\Student49Controller;
 
 
 /*
@@ -281,4 +283,17 @@ Route::get('/autocomplete', [Product45Controller::class, 'autocomplete'])->name(
 Route::get('/zip', [ZipController::class, 'zipFlile']);
 
 Route::get('/descargar', [ZipController::class, 'descarga']);
+
+/* Employee47 controlador destinado a realisar tablas  */
+
+Route::get('/employee47', [Employee47Controller::class, 'index']);
+
+/* Student49 controlador pactica 49 del curso de laravel 
+https://www.youtube.com/watch?v=RyYKXyvM3D4&list=PLz_YkiqIHesvWMGfavV8JFDQRJycfHUvD */
+
+Route::post('/add-student49',[Student49Controller::class, 'addStudent'])->name('student.add');
+
+Route::get('/student49', [Student49Controller::class, 'index']);
+
+
 
