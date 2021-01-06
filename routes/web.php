@@ -300,7 +300,9 @@ Route::get('/student49/{id}',[Student49Controller::class, 'getStudentById']);
 
 Route::put('/student49', [Student49Controller::class, 'updateStudent'])->name('student.update');
 
-Route::delete('/student49s/{id}', [Student49Controller::class, 'deleteStudent'])->name('student.delete');
+Route::delete('/student49s/{id}', [Student49Controller::class, 'deleteStudent']);
+
+Route::delete('/selected-students',  [Student49Controller::class, 'deleteCheckedStudents'])->name('student.deleteSelected');
 
 
 
