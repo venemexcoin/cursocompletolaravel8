@@ -91,6 +91,7 @@ Route::get('/payment', function(){
     return Payment::process();
 });
 
+
 Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
 Route::get('/posts', [ClientController::class, 'getAllPost'])->name('posts.getallPost');
@@ -293,7 +294,13 @@ https://www.youtube.com/watch?v=RyYKXyvM3D4&list=PLz_YkiqIHesvWMGfavV8JFDQRJycfH
 
 Route::post('/add-student49',[Student49Controller::class, 'addStudent'])->name('student.add');
 
-Route::get('/student49', [Student49Controller::class, 'index']);
+Route::get('/student49s', [Student49Controller::class, 'index']);
+
+Route::get('/student49/{id}',[Student49Controller::class, 'getStudentById']);
+
+Route::put('/student49', [Student49Controller::class, 'updateStudent'])->name('student.update');
+
+Route::delete('/student49s/{id}', [Student49Controller::class, 'deleteStudent'])->name('student.delete');
 
 
 

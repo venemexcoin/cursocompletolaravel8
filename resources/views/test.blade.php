@@ -28,9 +28,9 @@
 
 <br>
 @if(count($fruits)==1)
-    Single Fruit
+   Fruta única
 @elseif(count($fruits)>1)
-   more than on Fruit
+   más que en Fruit
 @else 
    No Fruit 
 @endif   

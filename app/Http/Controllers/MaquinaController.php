@@ -12,4 +12,6 @@ class MaquinaController extends Controller
        $a = $maquina;
         return $a->json();
     }
+
+    
 }

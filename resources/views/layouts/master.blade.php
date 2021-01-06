@@ -13,16 +13,16 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse ml-5 float-right" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="/home1">Home</a>
+              <a class="nav-link ml-5" href="/home1">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
+              <a class="nav-link ml-5" href="/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contacto</a>
+              <a class="nav-link ml-5" href="/contact">Contacto</a>
             </li>
           </ul>
         </div>
