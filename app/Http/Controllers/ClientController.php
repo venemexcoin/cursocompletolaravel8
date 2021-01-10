@@ -38,4 +38,6 @@ class ClientController extends Controller
         $response = Http::delete('https://jsonplaceholder.typicode.com/posts'. $id);
         return $response->json();
     }
+
+    
 }

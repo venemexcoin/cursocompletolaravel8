@@ -34,6 +34,11 @@ use App\Http\Controllers\Product45Controller;
 use App\Http\Controllers\ZipController;
 use App\Http\Controllers\Employee47Controller;
 use App\Http\Controllers\Student49Controller;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Post54Controller;
+use App\Http\Controllers\ChartController;
+use App\Http\Controllers\Test57Controller;
+use App\Http\Controllers\FormController;
 
 
 /*
@@ -304,5 +309,33 @@ Route::delete('/student49s/{id}', [Student49Controller::class, 'deleteStudent'])
 
 Route::delete('/selected-students',  [Student49Controller::class, 'deleteCheckedStudents'])->name('student.deleteSelected');
 
+/* Auth controlador */
+
+Route::get('/register1', [AuthController::class, 'index']);
+
+Route::Post('/register1', [AuthController::class, 'registerSubmit'])->name('auth.registersubmit');
 
 
+/* Post54 controlador */
+
+Route::get('/posrt54s', [Post54Controller::class, 'index']);
+
+/* chart controlador */
+
+Route::get('/chart',[ChartController::class, 'index']);
+
+Route::get('/bar-chat',[ChartController::class, 'barChart']);
+
+/* Test57 Controlador une dos bases de datos */
+
+Route::get('/add-student', [Test57Controller::class, 'addStudent']);
+
+Route::get('/add-post', [Test57Controller::class, 'addPost']);
+
+Route::get('/students57',[Test57Controller::class, 'getStudents']);
+
+Route::get('/posts57',[Test57Controller::class, 'getPosts']);
+
+/* Form controlador de muti step form */
+
+Route::get('/form',[FormController::class, 'index']);

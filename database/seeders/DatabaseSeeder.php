@@ -26,13 +26,14 @@ class DatabaseSeeder extends Seeder
             ]);
         }*/
 
-        // \App\Models\User::factory(10)->create();
 
+        \App\Models\User::factory(100)->create();
         \App\Models\Post::factory(50)->create();
         \App\Models\Post1::factory(50)->create();
         \App\Models\Usuario::factory(1000)->create();
         \App\Models\Student::factory(100)->create();
         \App\Models\Post2::factory(50)->create();
+        \App\Models\Post54::factory(100)->create();
     }
 
 }

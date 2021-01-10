@@ -31,6 +31,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'btc',
+        'eth',
+        'vmx',
+        'usd',
+        'mxn',
+        'bss',
+        'avatar',
     ];
 
     /**
