@@ -39,6 +39,7 @@ use App\Http\Controllers\Post54Controller;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\Test57Controller;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\Student60Controller;
 
 
 /*
@@ -339,3 +340,9 @@ Route::get('/posts57',[Test57Controller::class, 'getPosts']);
 /* Form controlador de muti step form */
 
 Route::get('/form',[FormController::class, 'index']);
+
+/* Student de la leccion 60 controlador */
+
+Route::get('/add-student60', [Student60Controller::class, 'addStudent']);
+
+Route::get('/get-student60',[Student60Controller::class, 'getSudents']);

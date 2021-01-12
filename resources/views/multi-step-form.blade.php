@@ -46,7 +46,7 @@
                         <div class="card-body">
                             <form action="" class="contact-form">
                                 @csrf
-                                <div class="form-section current">
+                                <div class="form-section">
                                     <label for="firstname">First Name</label>
                                     <input type="text" name="firstname" class="form-control" required />
 
