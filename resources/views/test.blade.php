@@ -23,7 +23,7 @@
 <br>
 
 @for($i=1;$i<=10;$i++)
-   {{$i}} <br/>
+   {{$i}}. hola <br/>
 @endfor
 
 <br>
@@ -32,9 +32,9 @@
 @elseif(count($fruits)>1)
    más que en Fruit
 @else 
-   No Fruit 
+   No hay frutas 
 @endif   
 
 <br>
 
-{{ $age >= 18 ? 'You are adult' : 'You are not adult'}}
+{{ $age >= 12 ? 'You are adult' : 'You are not adult'}}
