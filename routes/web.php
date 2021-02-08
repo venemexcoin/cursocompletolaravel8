@@ -40,6 +40,7 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\Test57Controller;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\Student60Controller;
+use App\Http\Controllers\PruebaController;
 
 
 /*
@@ -346,3 +347,15 @@ Route::get('/form',[FormController::class, 'index']);
 Route::get('/add-student60', [Student60Controller::class, 'addStudent']);
 
 Route::get('/get-student60',[Student60Controller::class, 'getSudents']);
+
+/* Controlador de Puerbas API reset */
+
+Route::get('/prueba', [PruebaController::class, 'getAllPrueba'])->name('prueba.getAllPrueba');
+
+Route::get('/pruebaUsd', [PruebaController::class, 'getallUsd'])->name('prueba.getallUsd');
+
+Route::get('/prueba1/{name}', [PruebaController::class, 'getPruebaById'])->name('prueba1.getPruebaById');
+
+Route::get('/prueba2/{name2}',[PruebaController::class, 'addsaldo'])->name('prueba2.addsaldo');
+
+Route::get('/prueba-index',[PruebaController::class, 'index']);
